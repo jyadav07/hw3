@@ -1,23 +1,18 @@
 <h1><%= @place["name"] %></h1>
 
-<h3>Entries</h3>
-
 <ul>
   <% for entry in @entries %>
     <li>
-      <strong><%= entry["title"] %></strong> — <%= entry["date"] %><br>
+     <strong><%= entry["title"] %></strong> — <%= entry["occurred_on"] %><br>
       <%= entry["description"] %>
     </li>
   <% end %>
 </ul>
 
 <p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>">Add Entry</a>
+  <a href="/entries/new?place_id=<%= @place["id"] %>">New Post</a>
 </p>
 
 <p><a href="/places">Back to All Places</a></p>
 
-<form action="/places/<%= @place["id"] %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button>Delete Place</button>
-</form>
+
